@@ -36,4 +36,20 @@ describe('Procurement Workflow', () => {
     }).toThrow();
   });
 
+  test('should generate unique request IDs', () => {
+  const purchaseRequestId1 = createPurchaseRequest({
+    employee: 'Jane',
+    amount: 100,
+    vendor: 'Company4'
+  });
+
+  const purchaseRequestId2 = createPurchaseRequest({
+    employee: 'Zane',
+    amount: 100,
+    vendor: 'Company5'
+  });
+
+  expect(purchaseRequestId1).not.toBe(purchaseRequestId2);
+});
+
 });
