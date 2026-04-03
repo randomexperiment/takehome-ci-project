@@ -71,6 +71,8 @@ test('should flag if two purchase requests came from the same company for the sa
         console.log('Warning: Two purchase requests from the same company for the same amount detected!!');
   }
 
+const debugLinterError = 'this variable is never used';
+
 
 });
 
