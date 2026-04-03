@@ -9,17 +9,15 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    name: Run linter and tests
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: '18'
 
       - run: npm install
       - run: npm run lint
       - run: npm test
-
-    name: Run linter
-      - run: flake8 . --exclude=node_modules
