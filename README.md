@@ -14,16 +14,8 @@ The goal is to enforce **code quality, test validation, and merge protection** o
 ---
 
 ## 📦 Project Structure
-.
-├── src/
-│ └── procurement.js # Business logic (Zip-like workflow)
-├── tests/
-│ └── procurement.test.js # Unit tests
-├── .github/
-│ └── workflows/
-│ └── ci.yml # CI pipeline configuration
-├── package.json
-└── README.md
+<img width="687" height="269" alt="Screenshot 2026-04-03 at 11 35 16 AM" src="https://github.com/user-attachments/assets/f67786d0-7e59-418a-8732-3716663fd357" />
+
 
 
 ---
@@ -38,45 +30,54 @@ This project simulates a **procurement system** inspired by Zip:
 - Detects if two same purchase requests have been intitiated by the same company. 
 
 ---
+<!-- GETTING STARTED -->
+## ⚙️ Getting Started
 
-## ⚙️ Setup Instructions
 
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/YOUR_USERNAME/zip-ci-demo.git
-cd zip-ci-demo
-
-### 2.Install Dependencies
+1. Clone the repository
+```sh
+git clone https://github.com/randomexperiment/takehome-ci-project.git
+cd takehome-ci-project
+```
+2. Install Dependencies
+```sh
 npm install
-
-### 3. Run Linting
+```
+3. Run Linting
+```sh
 npm install
-
-### 4. Run Tests
+```
+4. Run Tests
+```sh
 npm test
-
-
-🔄 CI Pipeline
-
+```
+---
+<!-- CI Pipeline -->
+## 🔄 CI Pipeline
 This project uses GitHub Actions to enforce quality on every PR.
 
 Pipeline Steps:
-Checkout code
-Install dependencies
-Run ESLint
-Run Jest tests
 
-🔐 Branch Protection Rules
+- **Checkout code**
+- **Install dependencies**
+- **Run ESLint**
+- **Run Jest tests**
+   
+---
+<!-- Branch Protection -->
+## 🔐 Branch Protection Rules
 
 The main branch is protected with:
 
-✅ Required PR reviews (1 approval)
-✅ Required CI checks to pass
-❌ No direct commits allowed
-🔁 Squash/rebase merge strategy
+- ✅ Required PR reviews (1 approval)
+- ✅ Required CI checks to pass
+- ❌ No direct commits allowed
+- 🔁 Squash/rebase merge strategy
 
-❌ Failure Conditions
+---
+
+<!-- Failure Conditions -->
+## ❌ Failure Conditions
 A PR will be blocked if:
 
 - Lint errors exist
@@ -84,19 +85,25 @@ A PR will be blocked if:
 - CI pipeline fails
 - No approval is provided
 
-🔔 Notifications
+---
+<!-- Notify -->
+## 🔔 Notifications
 GitHub provides:
 
 - PR status updates
 - Email notifications
 - UI alerts in the repository
 
-Optional integrations:
+---
+<!-- Options -->
+## ⭐ Optional integrations:
 - Slack notifications
 - Webhooks
 
+---
+<!-- Metrics -->
+## 📊 Metrics (Scalability Considerations)
 
-📊 Metrics (Scalability Considerations)
 | Metric        | Description                |
 | ------------- | -------------------------- |
 | MTTR          | Time to fix failing builds |
