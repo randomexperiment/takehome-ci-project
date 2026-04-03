@@ -52,4 +52,26 @@ describe('Procurement Workflow', () => {
   expect(purchaseRequestId1).not.toBe(purchaseRequestId2);
 });
 
+test('should flag if two purchase requests came from the same company for the same amount', () => {
+  const purchaseRequestId1 = createPurchaseRequest({
+    employee: 'Siya',
+    amount: 100,
+    vendor: 'Company4'
+  });
+
+  const purchaseRequestId2 = createPurchaseRequest({
+    employee: 'Jiya',
+    amount: 100,
+    vendor: 'Company4'
+  });
+
+  if 
+    (purchaseRequestId1.vendor === purchaseRequestId2.vendor &&  purchaseRequestId1.amount === purchaseRequestId2.amount)
+     {
+        console.log('Warning: Two purchase requests from the same company for the same amount detected!!');
+  }
+
+
+});
+
 });
